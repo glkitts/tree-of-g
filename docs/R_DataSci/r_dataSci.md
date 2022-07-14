@@ -6,10 +6,6 @@ toc: true
 
 # R Data Science Tips and Tricks
 
- ```toc
- min_depth: 1
-```
-
 # Subpages
 
 - [[rTips_figures_graphs|Tips and guides for figure making with a focus on scientific publication]]
