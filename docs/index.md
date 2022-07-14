@@ -1,11 +1,13 @@
-# Obsidian Notes
+# The Tree of G
 
-Publish your public notes with MkDocs
+A collection of things useful to me, that might be useful to you. 
 
-## Hello World!
+## Welcome!
 
-The `index.md` in the `/docs` folder is the homepage you see here.
+This is my digital garden, albeit in its earliest stages. 
 
-The folders in `/docs` appear as the main sections on the navigation bar.
+Here I intend to collect tools, tips, and thoughts that have been useful enough to me that I felt they were worth recording. 
 
-The notes appear as pages within these sections. For example, [[Note 1]] in `Topic 1`
+The specific topics of what I include here have yet to be decided. As of now I at least intend to include a collection of tools and databases of use during my work in microbiology molecular biology research, as well as findings in utilizing the R programming language for data analysis, visualization, and scientific figure generation. 
+
+[[r_dataSci]]
