@@ -11,6 +11,7 @@ toc: true
 - [[rTips_figures_graphs|Tips and guides for figure making with a focus on scientific publication]]
 - [[code_folder_organization|Optimal folder organization for lab data analyses]]
 - [[r_markdown|Rmd and Quarto tricks]]
+- [[color_palettes]]
 
 ---
 
@@ -37,7 +38,6 @@ I wish my naming to use a similar nomenclature between experiments/projects/etc.
 	- input label in both sheets, connects two upon join.
 	- extra sheets optional, preferrably avoided
 	- input file can host metadata - since generally one 'row' of input (ON culture) per strain, 
-
 
 
 ## importing data 

@@ -12,7 +12,7 @@ You must first knit your Rmd file to html. Once that has occured, from R console
 library(pagecryptr)
 if(interactive()){
  file <- "fileName.html"
- pagecryptr(file, "password", out_file = "~/Desktop/encrypted-file.html")
+ pagecryptr(file, "password")
 }
 ```
 
