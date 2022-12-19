@@ -14,5 +14,6 @@ The specific topics of what I include here have yet to be decided. As of now I a
 
 - [[r_dataSci]] -  primarily contains code snippets and approaches using the R coding language in the context of molecular biology data analysis and visualization.
 - [[color_palettes]] - notes on color palettes for different purposes in data visualization, optimal choices for colorblind and grayscale awareness, etc.
+- [[shell_snippets]]
 
 
