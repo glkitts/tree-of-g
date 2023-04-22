@@ -48,6 +48,18 @@ I wish my naming to use a similar nomenclature between experiments/projects/etc.
 - then readxl with excel_sheets for multi-sheet files
 
 
+## data parsing
+
+### filter out rows so that only counts > 0 in at least two of the columns remain
+
+used to remove rows from proteomics data 
+
+```{r}
+d %>% 
+  filter(rowSums(across(.cols = starts_with("cts_O"), .fns = ~ . > 0)) >= 2) %>%
+  filter(rowSums(across(.cols = starts_with("cts_M"), .fns = ~ . > 0)) >= 2)
+  ```
+
 
 ## working with images
 
