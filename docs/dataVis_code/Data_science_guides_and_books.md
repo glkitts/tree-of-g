@@ -1,4 +1,7 @@
 ---
+title: Data_science_guides_and_books
+tags: R, code, guides, data_sci
+toc: true
 ---
 
 A collection of coding and data science resources available online. 
