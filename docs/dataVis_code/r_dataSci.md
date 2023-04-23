@@ -95,3 +95,57 @@ tbl %>%
 #9      a 0.9148060
 #10     b 0.9370754
 ```
+
+
+## rstatix
+
+```{r}
+plotdata.ci_phospho <- plotdata.ci_all %>% 
+  filter(condition == "in_vivo") %>% 
+  filter((as.character(date) == "2022-10-26" & 
+            strain == "∆rvvA RvvB::D57E") | 
+           (as.character(date) == "2023-04-20" & 
+              strain %in% c(
+                "WT",
+                "∆rvvA RvvB::D57A",
+                "∆rvvA RvvB::D57E")))
+
+
+statdata <- plotdata.ci_phospho %>%
+  rstatix::tukey_hsd(CI ~ label_md) %>%
+  rstatix::add_significance(
+    cutpoints = stat_cut,
+    symbols = stat_symbols
+  ) %>%
+  rstatix::adjust_pvalue() %>%
+  rstatix::add_y_position(
+    fun = "max", 
+    ref.group = "WT", 
+    y.trans = log10
+  )
+
+d.statlist <- d.statlist %>%
+  append(list(CI_in_vivo_phosphomimics = statdata))
+
+  
+p.ci.phospho <- plotdata.ci_phospho %>%
+  # p.ci.mouse <- d.ci.all %>%
+  filter(condition == "in_vivo") %>%
+  ggplot(aes(
+    x = label_md,
+    y = CI
+  )) +
+  pt.ci() + 
+  ggpubr::stat_pvalue_manual(
+    data = statdata,
+    y.position = 0.38,
+    label = "p.adj.signif",
+    x = "group2", 
+    hide.ns = T,
+    remove.bracket = T,
+    # step.group.by = "phospho_set",
+    # tip.length = 0.01
+      )
+
+```
+
