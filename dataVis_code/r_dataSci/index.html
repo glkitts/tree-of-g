@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../markdown_notes/" rel="prev"/>
+<link href="../r_markdown/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.9" name="generator"/>
+<title>R_dataScience - The-Tree-Of-G</title>
+<link href="../../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a6bdf11c.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#r-data-science-tips-and-tricks">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="The-Tree-Of-G" class="md-header__button md-logo" data-md-component="logo" href="../.." title="The-Tree-Of-G">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            The-Tree-Of-G
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              R_dataScience
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="The-Tree-Of-G" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="The-Tree-Of-G">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    The-Tree-Of-G
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        The Tree of G
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          dataVis code
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          dataVis code
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Data_science_guides_and_books/">
+        Data_science_guides_and_books
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../color_palettes/">
+        Color palettes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../markdown_notes/">
+        Markdown notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        R_dataScience
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../r_markdown/">
+        R markdown
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../shell_snippets/">
+        Shell snippets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Molecular biology
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Molecular biology
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../molecular_biology/alignments/">
+        Sequence alignment tools and tips
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../molecular_biology/glyoxylate_bypass/">
+        Glyoxylate bypass
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="r-data-science-tips-and-tricks">R Data Science Tips and Tricks<a class="headerlink" href="#r-data-science-tips-and-tricks" title="Permanent link">¶</a></h1>
+<pre><code class="language-toc">max_depth: 2
+</code></pre>
+<hr/>
+<h1 id="subpages">Subpages<a class="headerlink" href="#subpages" title="Permanent link">¶</a></h1>
+<ul>
+<li>[[rTips_figures_graphs|Tips and guides for figure making with a focus on scientific publication]]</li>
+<li>[[code_folder_organization|Optimal folder organization for lab data analyses]]</li>
+<li><a href="../r_markdown/">Rmd and Quarto tricks</a></li>
+<li><a href="../color_palettes/">color_palettes</a></li>
+</ul>
+<hr/>
+<h1 id="topics">Topics<a class="headerlink" href="#topics" title="Permanent link">¶</a></h1>
+<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">¶</a></h2>
+<h3 id="naming-and-formatting-of-lab-data-for-consistent-syntax">naming and formatting of lab data for consistent syntax<a class="headerlink" href="#naming-and-formatting-of-lab-data-for-consistent-syntax" title="Permanent link">¶</a></h3>
+<p>I wish my naming to use a similar nomenclature between experiments/projects/etc. so that my downstream parsing with R can be as straightforward as possible. I will try to use standardized nomenclature moving forward. Specifics of that can be listed here. </p>
+<ul>
+<li>experimental datasets<ul>
+<li>file name: exp_date<ul>
+<li>date format: YYMMDD</li>
+<li>experiment format = two letter abbreviations</li>
+<li>i.e. gc_220204<ul>
+<li>growth curves on 02/04/2022</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="experiment-specifics">experiment specifics<a class="headerlink" href="#experiment-specifics" title="Permanent link">¶</a></h4>
+<ul>
+<li>CIs<ul>
+<li>excel file input: ci_date name</li>
+<li>needed sheets: input and output</li>
+<li>input label in both sheets, connects two upon join.</li>
+<li>extra sheets optional, preferrably avoided</li>
+<li>input file can host metadata - since generally one 'row' of input (ON culture) per strain, </li>
+</ul>
+</li>
+</ul>
+<h2 id="importing-data">importing data<a class="headerlink" href="#importing-data" title="Permanent link">¶</a></h2>
+<h3 id="multiple-excel-files-in-a-folder">multiple excel files in a folder:<a class="headerlink" href="#multiple-excel-files-in-a-folder" title="Permanent link">¶</a></h3>
+<ul>
+<li>can use list.files for all .xlsx in a directory</li>
+<li>then readxl with excel_sheets for multi-sheet files</li>
+</ul>
+<h2 id="data-parsing">data parsing<a class="headerlink" href="#data-parsing" title="Permanent link">¶</a></h2>
+<h3 id="filter-out-rows-so-that-only-counts-0-in-at-least-two-of-the-columns-remain">filter out rows so that only counts &gt; 0 in at least two of the columns remain<a class="headerlink" href="#filter-out-rows-so-that-only-counts-0-in-at-least-two-of-the-columns-remain" title="Permanent link">¶</a></h3>
+<p>used to remove rows from proteomics data </p>
+<pre><code>d %&gt;% 
+  filter(rowSums(across(.cols = starts_with("cts_O"), .fns = ~ . &gt; 0)) &gt;= 2) %&gt;%
+  filter(rowSums(across(.cols = starts_with("cts_M"), .fns = ~ . &gt; 0)) &gt;= 2)
+  ```
+
+## ggplot
+
+### How to arrange NAs first for plotting using dplyr
+
+[Use the is.na logical for sorting](https://stackoverflow.com/questions/43343590/how-to-sort-putting-nas-first-in-dplyr) 
+
+```r
+tbl %&gt;%
+   arrange(!is.na(val), val)
+# A tibble: 10 × 2
+#      id       val
+#   &lt;chr&gt;     &lt;dbl&gt;
+#1      f        NA
+#2      i 0.1346666
+#3      c 0.2861395
+#4      g 0.5190959
+#5      e 0.6417455
+#6      j 0.6569923
+#7      h 0.7365883
+#8      d 0.8304476
+#9      a 0.9148060
+#10     b 0.9370754
+</code></pre>
+<h2 id="patchwork">patchwork<a class="headerlink" href="#patchwork" title="Permanent link">¶</a></h2>
+<h3 id="figure-alignment-hacking">figure alignment hacking<a class="headerlink" href="#figure-alignment-hacking" title="Permanent link">¶</a></h3>
+<ul>
+<li>when wrap_elements(full = ) doesn't allow alignment, try adding plot margin (pre-wrapping using npc units for just one axis to be increased - i.e. use 0.02 npc on bottom margin and test until aligned)</li>
+</ul>
+<h2 id="working-with-images">working with images<a class="headerlink" href="#working-with-images" title="Permanent link">¶</a></h2>
+<h3 id="pdfs-imagemagick-rr">pdfs - imagemagick - rr<a class="headerlink" href="#pdfs-imagemagick-rr" title="Permanent link">¶</a></h3>
+<pre><code>model.plt &lt;- magick::image_read_pdf(path = '/home/rreggiar/figures/aale_model_cropped.pdf')
+
+wrap_elements(full = magick::image_ggplot(model.plt))
+
+</code></pre>
+<h2 id="rstatix">rstatix<a class="headerlink" href="#rstatix" title="Permanent link">¶</a></h2>
+<pre><code>plotdata.ci_phospho &lt;- plotdata.ci_all %&gt;% 
+  filter(condition == "in_vivo") %&gt;% 
+  filter((as.character(date) == "2022-10-26" &amp; 
+            strain == "∆rvvA RvvB::D57E") | 
+           (as.character(date) == "2023-04-20" &amp; 
+              strain %in% c(
+                "WT",
+                "∆rvvA RvvB::D57A",
+                "∆rvvA RvvB::D57E")))
+
+
+statdata &lt;- plotdata.ci_phospho %&gt;%
+  rstatix::tukey_hsd(CI ~ label_md) %&gt;%
+  rstatix::add_significance(
+    cutpoints = stat_cut,
+    symbols = stat_symbols
+  ) %&gt;%
+  rstatix::adjust_pvalue() %&gt;%
+  rstatix::add_y_position(
+    fun = "max", 
+    ref.group = "WT", 
+    y.trans = log10
+  )
+
+d.statlist &lt;- d.statlist %&gt;%
+  append(list(CI_in_vivo_phosphomimics = statdata))
+
+
+p.ci.phospho &lt;- plotdata.ci_phospho %&gt;%
+  # p.ci.mouse &lt;- d.ci.all %&gt;%
+  filter(condition == "in_vivo") %&gt;%
+  ggplot(aes(
+    x = label_md,
+    y = CI
+  )) +
+  pt.ci() + 
+  ggpubr::stat_pvalue_manual(
+    data = statdata,
+    y.position = 0.38,
+    label = "p.adj.signif",
+    x = "group2", 
+    hide.ns = T,
+    remove.bracket = T,
+    # step.group.by = "phospho_set",
+    # tip.length = 0.01
+      )
+
+</code></pre>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>
