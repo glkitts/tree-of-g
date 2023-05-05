@@ -26,3 +26,6 @@ Most content likely focused on data analysis and visualization in R using a [tid
 
 - [Learn the tidyverse](https://www.tidyverse.org/learn/)
 - [Cheatsheets from Posit (RStudio)](https://posit.co/resources/cheatsheets/) - PDF cheatsheets for various data-science aspects / packages in R
+- [Awesome ggplot](https://github.com/erikgahner/awesome-ggplot2) - Github repo containing a curated list of awesome ggplot2 tutorials, packages etc.
+
+---

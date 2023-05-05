@@ -6,6 +6,11 @@ toc: true
 
 # R Data Science Tips and Tricks
 
+```toc
+max_depth: 2
+```
+---
+
 # Subpages
 
 - [[rTips_figures_graphs|Tips and guides for figure making with a focus on scientific publication]]
@@ -60,18 +65,6 @@ d %>%
   filter(rowSums(across(.cols = starts_with("cts_M"), .fns = ~ . > 0)) >= 2)
   ```
 
-
-## working with images
-
-### pdfs - imagemagick - rr
-
-```{r}
-model.plt <- magick::image_read_pdf(path = '/home/rreggiar/figures/aale_model_cropped.pdf')
-
-wrap_elements(full = magick::image_ggplot(model.plt))
-
-```
-
 ## ggplot
 
 ### How to arrange NAs first for plotting using dplyr
@@ -94,6 +87,24 @@ tbl %>%
 #8      d 0.8304476
 #9      a 0.9148060
 #10     b 0.9370754
+```
+
+
+## patchwork
+
+### figure alignment hacking
+
+- when wrap_elements(full = ) doesn't allow alignment, try adding plot margin (pre-wrapping using npc units for just one axis to be increased - i.e. use 0.02 npc on bottom margin and test until aligned)
+
+## working with images
+
+### pdfs - imagemagick - rr
+
+```{r}
+model.plt <- magick::image_read_pdf(path = '/home/rreggiar/figures/aale_model_cropped.pdf')
+
+wrap_elements(full = magick::image_ggplot(model.plt))
+
 ```
 
 
